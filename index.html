@@ -1,0 +1,91 @@
+<!-- 
+ * Title: Weekly assignment #4
+ * Author: Aidan Lo
+ * Date: Sunday July 19th, 2026
+ *
+ * AI Use Appendix:
+ *
+ * 1. Tool(s) used:
+ * ChatGPT (OpenAI)
+ *
+ * 2. Purpose of AI use:
+ * I used ChatGPT to assist with debugigng my scaling of my sketch to the window portion I wanted. 
+ * I used ChatGPT to assist with setting up a global framework to scale everything in the canvas sketch in chunks instead of manually replacing each drawn shape and image with width and height. 
+ * I used ChatGPT to assist with ensuring my words scaled in size with the window sizes permitted for parts outside of the sketch.
+ * 
+ * 3. Selected prompt(s) or conversation link/export:
+ * For assistance with setting up the global framework to scale everything, I asked it why using windowHeight/Width was causing the canvas sketch to extend beyond the immediate window, and how to fix it. It suggested using other constants besides windowWidth since windowWidth could extend beyond the immediate window on some browsers (like google chrome).
+ * For assistance with setting up the global framework, I asked it how I could set up a global framework that applied to all drawn functions in draw() universally without needing to use things like windowWidth/Height in hundreds of lines of code. This included mousePressed() and particles (the rain). It suggested creating and using some new functions and constants based on the current window's height and "original" canvas sketch without actually invoking windowHeight/Width, then pairing them with push() and pop() in draw() to influence all functions invoked in draw() (which are all the functions with info that needed to be drawn for each scene).
+ * For assistance with ensuring my words scaled in size with window sizes permitted, I asked ChatGPT if there were ways to scale text font sizes without using px. It suggested creating and using clamp() with rem and vw for 2 windows partitions, so if the window as a whole shrunk each partition would shrink their text accordingly. 
+ * 
+ * 4. What I accepted, rejected, or changed:
+ * For scaling the sketchg, I accepted the suggestion to use a few new global constants and functions like offsetWidth and using sketchDiv.(stuff). I modified the suggested frameworks to use my own "sketch" and began applying them to stretch the canvas sketch to the size "permitted" in CSS. This let me modify 
+ * For scaling everything else in the sketch, I accepted the suggestion of using the new variables I created like scaleFactor, BASE_W, and offset) and manipulating them (such as BASE_W + (2 * offsetX) / scaleFactor) to stretch out certain drawn shapes.I also accepted replacing my old mousePressed variables with new ones since the old ones accomodated a non-stretching sketch, but the new ones (which I called mx and my) could using similar manipulations of scaleFactor and offset. This was especially useful for drawn shapes and imaegs in the "background", like the hills at the end of each pathway (scenes 7 and 11) and some background images (like in scene 1). I also accepted the suggestion to use push() and pop() to surround my draw() functions, but of course used it to surround my more numerous functions than chatgpt had anticipated.  
+ * For ensuring that my words scaled in size with window sizes permitted, I accepted the suggestion of using clamp(), rem, and vw, since by using those three in conjunction I could establish a minimum and maximum font size based on window size instead of raw numbers I inputted. I, however, changed the exact numbers suggested, given thatthey were fro a differently sized web browser window partitioning, and added in multiple more clamps to accomodate having more than 2 segments with words in them. 
+ * 
+ * 5. Testing and verification:
+ * When I used the new offsets and sketchDivs, I repeatedly had to pause and debug due to typos, and thus tested line by line if my sketch was loading or not, and if so, how far was it stretching. Eventually, it settled on where it stretches today, with a slightmargin. 
+ * When I used push() pop() translate() and the other new functions and constants, I similarly tested it line by line by checking if the images/shapes stretched correctly by changing my own browser's window size. If it stretched correctly, I moved on. If not, I went back to debug, then changed browser window size again. This was especially true for mousePressed() since I was replacing the crucial regions that the Next button checked for clicks at, including minimizing my browser window to its absolute smallest and testing if it still changed scenes. 
+ * When I used clamp(), rem, and vw, I tested numerous numbers in clamp() for each vw and rem. 
+ * 
+ * Final authorship statement:
+ * The final project reflects my own narrative concept, design judgment, technical understanding,
+ * and creative voice. AI was used as a creative and/or technical collaborator, and all AI-assisted
+ * elements have been reviewed, edited, and integrated by me.
+ * Aidan Lo
+ -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>p5.js & Assets Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+   <div id="leftTop">
+    <h1>My Web Narrative</h1>
+   <h2>Author: Aidan Lo</h2>
+<p>Home About Contact</p>
+  </div>
+   <div id="leftBottom">
+    <h2>A Garnet Red Backpack</h2>
+<p>
+Disclaimer: While the story is inspired by personal experiences of the author's volunteering at a hospital, all similarities to real life individuals are entirely coincidental. Additionally, parts of this website's animations were assisted by artificial intelligence.
+</p>
+<p>
+Click the white buttons inside the story to advance.
+</p>
+  </div>
+  <div id="rightTop">
+    <h1>My p5.js Sketch</h1>
+  </div>
+  <div id="rightMiddle">
+    <div id="sketch"></div>
+  </div>
+  <div id="rightBottom">
+    <div class="controls">
+      <button id="dialogue-btn">Show Dialogue</button>
+    <button id="toggle-sound">Play / Stop Music</button>
+    <label>
+      Volume:
+      <input id="vol"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.5">
+      <span id="volVal">0.50</span>
+    </label>
+  </div>
+  </div>
+  
+ <!-- the p5.js library stuff -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+<!-- the connection to sketch.js -->
+  <script src="sketch.js"></script>
+</body>
+</html>

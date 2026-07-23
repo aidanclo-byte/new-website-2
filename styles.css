@@ -1,0 +1,150 @@
+html, body { margin: 0; }
+
+body{
+    margin:0;
+    background:white;
+    font-family:Arial, sans-serif;
+}
+#leftTop{
+    position:absolute;
+    left:0;
+    top:0;
+    width:46%;
+    height:42%;
+    background:#c8daf8;
+    border:3px solid black;
+    text-align:center;
+}
+#leftBottom{
+    position:absolute;
+    left:0;
+    top:42%;
+    width:46%;
+    height:58%;
+    background:#c9ffd5;
+    border:3px solid black;
+    box-sizing:border-box;
+    padding:30px;
+}
+#rightTop{
+    position:absolute;
+    left:46%;
+    top:0;
+    width:54%;
+    height:15%;
+    border:3px solid black;
+    background:white;
+    text-align:center;
+}
+#rightMiddle{
+    position:absolute;
+    left:46%;
+    top:15%;
+    width:54%;
+    height:75%;
+    border:3px solid black;
+    background:white;
+}
+#rightBottom{
+    position:absolute;
+    left:46%;
+    top:90%;
+    width:54%;
+    height:10%;
+    border:3px solid black;
+    background:#c9ffd5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}
+
+#rightMiddle{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#sketch{
+    width:95%;
+    height:95%;
+}
+
+
+canvas {
+    display: block;
+}
+/* Left blue box */
+#leftTop h1{
+    font-size: clamp(2.2rem, 4vw, 5rem);
+}
+#leftTop h2{
+    font-size: clamp(1.3rem, 3vw, 3.5rem);
+}
+#leftTop p{
+    font-size: clamp(1rem, 2vw, 2.4rem);
+}
+/* Left green box */
+#leftBottom h2{
+    font-size: clamp(1.3rem, 2vw, 2.5rem);
+}
+#leftBottom p{
+    font-size: clamp(0.95rem, 2vw, 2rem);
+}
+/* Right title */
+#rightTop h1{
+    font-size: clamp(2.2rem, 3vw, 4rem);
+}
+/* Bottom controls */
+#rightBottom button{
+    font-size: clamp(0.95rem, 1.8vw, 2rem);
+}
+#rightBottom label{
+    font-size: clamp(0.95rem, 1.8vw, 2rem);
+}
+#volVal{
+    font-size: clamp(0.95rem, 1.8vw, 2rem);
+}
+
+
+.controls {
+    display: inline-flex;
+    flex-wrap: wrap;          
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    background: rgba(255,255,255,0.75);
+    padding: 8px 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    margin: 8px auto 20px;
+}
+
+@media (max-width: 700px) {
+
+    .controls {
+        flex-direction: column;
+        width: 90%;
+        margin: 8px auto;
+    }
+
+    .controls > * {
+        width: 100%;
+    }
+
+    .controls button {
+        padding: 10px;
+    }
+
+    .controls label {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: stretch;
+    }
+
+    #vol {
+        width: 100%;
+    }
+}
