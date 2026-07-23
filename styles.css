@@ -66,8 +66,8 @@ body{
 }
 
 #sketch{
-    width:95%;
-    height:95%;
+    width:100%;
+    aspect-ratio:1/1;
 }
 
 
