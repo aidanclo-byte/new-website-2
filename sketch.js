@@ -354,7 +354,8 @@ pop()
   function drawScene0() {
   background(255,255,0);
   image(img, -40- offsetX / scaleFactor, 100, 500 + ( offsetX) / scaleFactor, 500);
-  image(imgf, 350- offsetX / scaleFactor,100,550 + ( offsetX) / scaleFactor,500)
+  image(imgf, 300- offsetX / scaleFactor,100,290 + ( offsetX) / scaleFactor,500)
+    
     
  //text box that says "Backpack, A Short Story"
   strokeWeight(5)
