@@ -69,14 +69,7 @@ body{
     width:100%;
     aspect-ratio:1/1;
 }
-#sketch{
-    width: 500px;
-    height: 500px;
-    border: 5px solid red;
-}
-#sketch canvas{
-    display:block;
-}
+
 
 canvas {
     display: block;
