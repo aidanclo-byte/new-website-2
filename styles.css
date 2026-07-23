@@ -148,3 +148,22 @@ canvas {
         width: 100%;
     }
 }
+
+@media (max-width: 700px) {
+
+    #leftTop,
+    #leftBottom,
+    #rightTop,
+    #rightMiddle,
+    #rightBottom {
+        position: static;
+        width: 100%;
+        left: auto;
+        top: auto;
+    }
+
+    #rightMiddle {
+        aspect-ratio: 1 / 1;
+        min-height: 400px;
+    }
+}
