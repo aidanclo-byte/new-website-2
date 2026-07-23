@@ -76,34 +76,34 @@ canvas {
 }
 /* Left blue box */
 #leftTop h1{
-    font-size: clamp(2.2rem, 4vw, 5rem);
+    font-size: clamp(0.1rem, 4vw, 5rem);
 }
 #leftTop h2{
-    font-size: clamp(1.3rem, 3vw, 3.5rem);
+    font-size: clamp(0.1rem, 3vw, 3.5rem);
 }
 #leftTop p{
-    font-size: clamp(1rem, 2vw, 2.4rem);
+    font-size: clamp(0.1, 2vw, 2.4rem);
 }
 /* Left green box */
 #leftBottom h2{
-    font-size: clamp(1.3rem, 2vw, 2.5rem);
+    font-size: clamp(0.1rem, 2vw, 2.5rem);
 }
 #leftBottom p{
-    font-size: clamp(0.95rem, 2vw, 2rem);
+    font-size: clamp(0.1rem, 2vw, 2rem);
 }
 /* Right title */
 #rightTop h1{
-    font-size: clamp(2.2rem, 3vw, 4rem);
+    font-size: clamp(0.1rem, 3vw, 4rem);
 }
 /* Bottom controls */
 #rightBottom button{
-    font-size: clamp(0.95rem, 1.8vw, 2rem);
+    font-size: clamp(0.1rem, 1.8vw, 2rem);
 }
 #rightBottom label{
-    font-size: clamp(0.95rem, 1.8vw, 2rem);
+    font-size: clamp(0.1rem, 1.8vw, 2rem);
 }
 #volVal{
-    font-size: clamp(0.95rem, 1.8vw, 2rem);
+    font-size: clamp(0.1rem, 1.8vw, 2rem);
 }
 
 
